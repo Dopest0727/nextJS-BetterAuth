@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { signIn } from "@/lib/actions/auth-actions";
 
 export default function AuthClientPage() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -12,8 +13,6 @@ export default function AuthClientPage() {
   const [error, setError] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
-
-  // Get callback URL from search params (set by middleware)
 
   const handleSocialAuth = async (provider: "google" | "github") => {
     setIsLoading(true);
@@ -40,7 +39,15 @@ export default function AuthClientPage() {
     try {
       if (isSignIn) {
         console.log("Signed in");
+        const result = await signIn(email, password);
+        if (!result.user) {
+          setError("Invalid Emial or Password");
+        }
       } else {
+        const result = await signUp(email, password, name);
+        if (!result.user) {
+          setError("Failed to create account");
+        }
         console.log("Signed up");
       }
     } catch (err) {
