@@ -1,14 +1,14 @@
 "use client";
+import { signOut } from "@/lib/actions/auth-actions";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function DashboardClientPage() {
   const router = useRouter();
 
-  // Redirect to auth if not authenticated
-
   const handleSignOut = async () => {
-    alert("Signed out");
+    await signOut();
+    router.push("/auth");
   };
 
   return (
@@ -29,6 +29,7 @@ export default function DashboardClientPage() {
               <div className="flex items-center space-x-3">
                 <div className="flex items-center space-x-3">
                   <img
+                    alt="picture"
                     className="h-10 w-10 rounded-full"
                     src={
                       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
