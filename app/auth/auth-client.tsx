@@ -35,17 +35,15 @@ export default function AuthClientPage() {
 
     try {
       if (isSignIn) {
-        console.log("Signed in");
         const result = await signIn(email, password);
         if (!result.user) {
-          setError("Invalid Emial or Password");
+          setError("Invalid email or password");
         }
       } else {
         const result = await signUp(email, password, name);
         if (!result.user) {
           setError("Failed to create account");
         }
-        console.log("Signed up");
       }
     } catch (err) {
       setError(
