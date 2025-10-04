@@ -7,8 +7,9 @@ import { useRouter } from "next/navigation";
 
 type Session = typeof auth.$Infer.Session;
 
-export default function DashboardClientPage({ session }: Session) {
+export default function DashboardClientPage({ session }: { session: Session }) {
   const router = useRouter();
+  const user = session.user;
 
   const handleSignOut = async () => {
     await signOut();
@@ -40,8 +41,8 @@ export default function DashboardClientPage({ session }: Session) {
                     }
                   />
                   <div className="text-sm">
-                    <p className="text-gray-900 font-medium">John Doe</p>
-                    <p className="text-gray-500">email@gmail.com</p>
+                    <p className="text-gray-900 font-medium">{user.name}</p>
+                    <p className="text-gray-500">{user.email}</p>
                   </div>
                 </div>
                 <button
@@ -66,18 +67,20 @@ export default function DashboardClientPage({ session }: Session) {
                   </span>
                 </div>
                 <div>
-                  <span className="font-medium text-blue-700">Provider:</span>
+                  <span className="font-medium text-blue-700">Provider</span>
                   <span className="ml-2 text-blue-600">Better-Auth</span>
                 </div>
                 <div>
                   <span className="font-medium text-blue-700">User ID:</span>
-                  <span className="ml-2 text-blue-600">1234566</span>
+                  <span className="ml-2 text-blue-600">{user.id}</span>
                 </div>
                 <div>
                   <span className="font-medium text-blue-700">
                     Email Verified:
                   </span>
-                  <span className="ml-2 text-blue-600">Yes</span>
+                  <span className="ml-2 text-blue-600">
+                    {user.emailVerified ? "Yes" : "No"}
+                  </span>
                 </div>
               </div>
             </div>
