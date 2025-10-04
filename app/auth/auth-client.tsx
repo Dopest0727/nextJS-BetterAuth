@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
+// import { useRouter, useSearchParams } from "next/navigation";
 import { signIn, signInSocial, signUp } from "@/lib/actions/auth-actions";
 
 export default function AuthClientPage() {
@@ -11,8 +11,8 @@ export default function AuthClientPage() {
   const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  // const router = useRouter();
+  // const searchParams = useSearchParams();
 
   const handleSocialAuth = async (provider: "google" | "github") => {
     setIsLoading(true);
