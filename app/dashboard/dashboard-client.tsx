@@ -1,9 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { signOut } from "@/lib/actions/auth-actions";
+import { auth } from "@/lib/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function DashboardClientPage() {
+type Session = typeof auth.$Infer.Session;
+
+export default function DashboardClientPage({ session }: Session) {
   const router = useRouter();
 
   const handleSignOut = async () => {
