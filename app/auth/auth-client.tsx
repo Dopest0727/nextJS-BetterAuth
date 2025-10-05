@@ -57,7 +57,7 @@ export default function AuthClientPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-yellow-50">
       <div className="flex items-center justify-center p-4 pt-20">
         <div className="max-w-md w-full space-y-8">
           <div className="text-center">
@@ -148,7 +148,7 @@ export default function AuthClientPage() {
               <div className="w-full border-t border-gray-300" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-500">
+              <span className="p-2 rounded-lg bg-gradient-to-br from-orange-50 to-orange-100 text-gray-500">
                 Or continue with
               </span>
             </div>
@@ -221,7 +221,7 @@ export default function AuthClientPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
             >
               {isLoading ? (
                 <div className="flex items-center">
@@ -264,7 +264,7 @@ export default function AuthClientPage() {
                 setError(""); // Clear any previous errors
                 setName(""); // Clear name when switching modes
               }}
-              className="text-indigo-600 hover:text-indigo-500 text-sm font-medium transition-colors"
+              className="text-orange-500 hover:text-orange-400 text-sm font-medium transition-colors"
             >
               {isSignIn
                 ? "Don't have an account? Sign up"

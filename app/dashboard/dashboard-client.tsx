@@ -55,30 +55,34 @@ export default function DashboardClientPage({ session }: { session: Session }) {
             </div>
 
             {/* Authentication Info */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-              <h3 className="text-lg font-medium text-blue-900 mb-2">
+            <div className="bg-gray-50  rounded-lg p-4 mb-6">
+              <h3 className="text-lg font-medium text-black mb-2">
                 Authentication Status
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="font-medium text-blue-700">Status:</span>
-                  <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  <span className="font-medium text-black">Status:</span>
+                  <span className="ml-2 inline-flex items-center px-3.25 py-1.5 rounded-full text-xs font-medium bg-orange-100 text-black">
                     Authenticated
                   </span>
                 </div>
                 <div>
-                  <span className="font-medium text-blue-700">Provider</span>
-                  <span className="ml-2 text-blue-600">Better-Auth</span>
+                  <span className="font-medium text-black">Provider</span>
+                  <span className="ml-2 inline-flex items-center px-3.25 py-1.5 rounded-full text-xs font-medium bg-orange-100 text-black">
+                    Better-Auth
+                  </span>
                 </div>
                 <div>
-                  <span className="font-medium text-blue-700">User ID:</span>
-                  <span className="ml-2 text-blue-600">{user.id}</span>
+                  <span className="font-medium text-black">User ID:</span>
+                  <span className="ml-2 inline-flex items-center px-3.25 py-1.5 rounded-full text-xs font-medium bg-orange-100 text-black">
+                    {user.id}
+                  </span>
                 </div>
                 <div>
-                  <span className="font-medium text-blue-700">
+                  <span className="font-medium text-black">
                     Email Verified:
                   </span>
-                  <span className="ml-2 text-blue-600">
+                  <span className="ml-2 text-orange-500">
                     {user.emailVerified ? "Yes" : "No"}
                   </span>
                 </div>
@@ -87,10 +91,10 @@ export default function DashboardClientPage({ session }: { session: Session }) {
 
             {/* Demo Features */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-gray-50 rounded-lg p-6">
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+              <div className="bg-orange-100 rounded-lg p-6">
+                <div className="w-12 h-12 bg-orange-200 rounded-lg flex items-center justify-center mb-4">
                   <svg
-                    className="w-6 h-6 text-indigo-600"
+                    className="w-6 h-6 text-orange-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -112,10 +116,10 @@ export default function DashboardClientPage({ session }: { session: Session }) {
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+              <div className="bg-orange-100 rounded-lg p-6">
+                <div className="w-12 h-12 bg-orange-200 rounded-lg flex items-center justify-center mb-4">
                   <svg
-                    className="w-6 h-6 text-green-600"
+                    className="w-6 h-6 text-orange-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -136,10 +140,10 @@ export default function DashboardClientPage({ session }: { session: Session }) {
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-6">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+              <div className="bg-orange-100 rounded-lg p-6">
+                <div className="w-12 h-12 bg-orange-200 rounded-lg flex items-center justify-center mb-4">
                   <svg
-                    className="w-6 h-6 text-purple-600"
+                    className="w-6 h-6 text-orange-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -170,7 +174,7 @@ export default function DashboardClientPage({ session }: { session: Session }) {
               <div className="flex flex-wrap gap-3">
                 <button
                   onClick={() => alert("Mock action: Profile updated!")}
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
                 >
                   Update Profile
                 </button>
@@ -200,7 +204,7 @@ export default function DashboardClientPage({ session }: { session: Session }) {
                 </Link>
                 <Link
                   href="/auth"
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
                 >
                   Manage Account
                 </Link>
