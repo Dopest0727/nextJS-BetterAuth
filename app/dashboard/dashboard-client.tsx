@@ -16,6 +16,12 @@ export default function DashboardClientPage({ session }: { session: Session }) {
     router.push("/auth");
   };
 
+  const avatarSrc =
+    user?.image ||
+    `https://api.dicebear.com/8.x/initials/svg?seed=${encodeURIComponent(
+      user?.name || "User"
+    )}`;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Main Content */}
@@ -34,11 +40,9 @@ export default function DashboardClientPage({ session }: { session: Session }) {
               <div className="flex items-center space-x-3">
                 <div className="flex items-center space-x-3">
                   <img
-                    alt="picture"
-                    className="h-10 w-10 rounded-full"
-                    src={
-                      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-                    }
+                    alt={user?.name ?? "User avatar"}
+                    className="h-10 w-10 rounded-full object-cover"
+                    src={avatarSrc}
                   />
                   <div className="text-sm">
                     <p className="text-gray-900 font-medium">{user.name}</p>
